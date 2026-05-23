@@ -145,12 +145,15 @@ User Registration
 Login
 JWT Authentication
 OTP Verification
-📧 Mail Service
 
+
+📧 Mail Service
 Handles:
 
 OTP Email Sending
 Queue-based Email Processing
+
+
 💬 Chat Service
 
 Handles:
@@ -159,6 +162,8 @@ Real-time Messaging
 Socket.IO Connections
 Online User Tracking
 Chat Persistence
+
+```
 ⚡ Redis Usage
 
 Redis is used for:
@@ -191,6 +196,8 @@ Instant Message Delivery
 Online/Offline Presence
 Typing Indicators
 Real-time Event Communication
+
+```
 ☁️ Deployment
 
 The application is deployed using:
@@ -198,11 +205,9 @@ The application is deployed using:
 AWS EC2
 Docker Containers
 Nginx Reverse Proxy
-📸 Screenshots
 
-Add project screenshots here.
+```
 
-/screenshots
 🚀 Future Improvements
 ✅ Read Receipts
 ✅ Group Chats
@@ -211,10 +216,14 @@ Add project screenshots here.
 ✅ Prometheus & Grafana Monitoring
 ✅ CI/CD with GitHub Actions
 ✅ Kubernetes Deployment
+
+
 👨‍💻 Author
 Harshit Shukla
 GitHub: https://github.com/Harshit9026
 LinkedIn: https://linkedin.com/in/your-profile
-⭐ Star the Repo
+
+```
+
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
