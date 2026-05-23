@@ -1,48 +1,55 @@
-SyncChat
+# 🚀 SyncChat
 
-A scalable, production-ready real-time chat application built using the MERN stack, microservices architecture, RabbitMQ, Redis, and Socket.IO. The platform supports real-time messaging, OTP-based authentication, distributed communication between services, and cloud deployment with Dockerized infrastructure.
+A scalable, production-ready real-time chat application built using the MERN stack, Microservices Architecture, RabbitMQ, Redis, and Socket.IO.  
 
-🚀 Features
-🔐 OTP-based Email Authentication
-💬 Real-time Messaging with Socket.IO
-🏗️ Microservices Architecture
-📨 RabbitMQ for Inter-service Communication
-⚡ Redis Caching for Performance Optimization
-🐳 Dockerized Services
-☁️ AWS Deployment Ready
-🔄 Scalable Backend Infrastructure
-📱 Responsive React Frontend
-🔑 JWT-based Authorization
-📡 Real-time User Presence & Messaging
-🛠️ RESTful APIs with Express.js
-🏗️ Architecture Overview
+SyncChat enables real-time messaging, OTP-based authentication, distributed service communication, and scalable cloud deployment using Docker and AWS.
 
-The application follows a distributed microservices-based architecture:
+---
 
-Client (React)
-      │
-      ▼
-API Gateway / Backend Services
-      │
- ┌────┴────┐
- │         │
- ▼         ▼
-User Service   Chat Service
- │                │
- ▼                ▼
-Mail Service   Socket.IO Server
-      │
-      ▼
- RabbitMQ
-      │
-      ▼
+## ✨ Features
+
+- 🔐 OTP-based Email Authentication
+- 💬 Real-time Messaging with Socket.IO
+- 🏗️ Microservices-based Backend Architecture
+- 📨 RabbitMQ for Inter-service Communication
+- ⚡ Redis Caching & Session Management
+- 🐳 Dockerized Services
+- ☁️ AWS Deployment
+- 🔑 JWT Authentication & Protected Routes
+- 📱 Fully Responsive React UI
+- 🚀 Scalable & Modular Backend Infrastructure
+
+---
+
+# 🏗️ System Architecture
+
+```bash
+Client (React.js)
+       │
+       ▼
+ API Gateway / Backend
+       │
+ ┌─────┴─────┐
+ │           │
+ ▼           ▼
+User      Chat Service
+Service
+ │
+ ▼
+Mail Service
+       │
+       ▼
+   RabbitMQ
+       │
+       ▼
  Redis + MongoDB
-🛠️ Tech Stack
+
+ 🛠️ Tech Stack
 Frontend
 React.js
 Tailwind CSS
-Axios
 Socket.IO Client
+Axios
 Backend
 Node.js
 Express.js
@@ -57,132 +64,157 @@ Docker
 Docker Compose
 AWS EC2
 Nginx
-📂 Microservices
-1. User Service
+```
+
+🛠️ Tech Stack
+Frontend
+React.js
+Tailwind CSS
+Socket.IO Client
+Axios
+
+
+Backend
+Node.js
+Express.js
+Socket.IO
+JWT Authentication
+Databases & Messaging
+MongoDB
+Redis
+RabbitMQ
+DevOps & Deployment
+Docker
+Docker Compose
+AWS EC2
+Nginx
+
+
+```
+📦 Installation & Setup
+Clone Repository
+git clone https://github.com/Harshit9026/SyncChat.git
+cd SyncChat
+
+```
+
+```
+
+⚙️ Environment Variables
+
+Create .env files inside services.
+
+PORT=5000
+
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET=your_jwt_secret
+
+REDIS_URL=your_redis_url
+
+RABBITMQ_URL=your_rabbitmq_url
+
+EMAIL_USER=your_email
+
+EMAIL_PASS=your_email_password
+
+
+🐳 Docker Setup
+Start All Services
+docker-compose up --build
+
+
+▶️ Run Locally
+Backend
+cd backend
+npm install
+npm run dev
+Frontend
+cd frontend
+npm install
+npm run dev
+
+```
+
+📁 Microservices
+👤 User Service
 
 Handles:
 
-User registration
+User Registration
 Login
-JWT authentication
-OTP verification
-2. Mail Service
+JWT Authentication
+OTP Verification
+📧 Mail Service
 
 Handles:
 
-OTP email delivery
-Notification-based communication
-3. Chat Service
+OTP Email Sending
+Queue-based Email Processing
+💬 Chat Service
 
 Handles:
 
-Real-time messaging
-Socket.IO events
-Chat persistence
-Active users
+Real-time Messaging
+Socket.IO Connections
+Online User Tracking
+Chat Persistence
 ⚡ Redis Usage
 
 Redis is used for:
 
-OTP storage with expiration
-Session caching
-Active user tracking
-Rate limiting
-Performance optimization
+OTP Storage
+Session Caching
+Active User Tracking
+Performance Optimization
+Rate Limiting
 📨 RabbitMQ Usage
 
 RabbitMQ enables asynchronous communication between services:
 
-OTP generation events
-Mail queue processing
-Decoupled service communication
-Improved scalability and reliability
+OTP Event Processing
+Mail Queue Handling
+Decoupled Service Communication
+Scalable Event-driven Architecture
 🔐 Authentication Flow
-User registers with email
+User registers using email
 OTP generated and pushed to RabbitMQ
-Mail service consumes queue and sends OTP
+Mail service consumes queue & sends OTP
 OTP validated using Redis
 JWT token generated after verification
-Protected routes accessed using JWT authentication
+Protected APIs accessed using JWT auth
 💬 Real-Time Messaging
 
 Implemented using Socket.IO with:
 
-Real-time chat delivery
-Typing indicators
-Online/offline status
-Socket authentication
-Event-based communication
-🐳 Docker Setup
-
-The project is fully containerized using Docker.
-
-Services
-Frontend
-User Service
-Chat Service
-Mail Service
-MongoDB
-Redis
-RabbitMQ
-Nginx
-📦 Installation
-Clone Repository
-git clone https://github.com/Harshit9026/SyncChat.git
-cd SyncChat
-⚙️ Environment Variables
-
-Create .env files for services.
-
-Example:
-
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-REDIS_URL=your_redis_url
-RABBITMQ_URL=your_rabbitmq_url
-EMAIL_USER=your_email
-EMAIL_PASS=your_password
-▶️ Run Locally
-Install Dependencies
-npm install
-Start Services
-docker-compose up --build
+Instant Message Delivery
+Online/Offline Presence
+Typing Indicators
+Real-time Event Communication
 ☁️ Deployment
 
-The application is deployed on AWS using:
+The application is deployed using:
 
-EC2 Instances
+AWS EC2
 Docker Containers
 Nginx Reverse Proxy
 📸 Screenshots
 
+Add project screenshots here.
 
-📈 Future Improvements
-Message delivery receipts
-Group chats
-File sharing
-Push notifications
-Kubernetes deployment
-Monitoring with Prometheus & Grafana
-CI/CD with GitHub Actions
-🧠 Learning Outcomes
-
-Through this project, I gained hands-on experience with:
-
-Microservices architecture
-Distributed systems
-Event-driven communication
-Real-time applications
-Containerization & deployment
-Backend scalability techniques
-🤝 Contributing
-
-Contributions are welcome. Feel free to fork the repository and submit pull requests.
-
-📧 Contact
-
+/screenshots
+🚀 Future Improvements
+✅ Read Receipts
+✅ Group Chats
+✅ File Sharing
+✅ Push Notifications
+✅ Prometheus & Grafana Monitoring
+✅ CI/CD with GitHub Actions
+✅ Kubernetes Deployment
+👨‍💻 Author
 Harshit Shukla
-
-LinkedIn: https://linkedin.com
 GitHub: https://github.com/Harshit9026
+LinkedIn: https://linkedin.com/in/your-profile
+⭐ Star the Repo
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
